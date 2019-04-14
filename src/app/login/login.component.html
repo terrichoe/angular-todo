@@ -17,5 +17,6 @@
     name="password"
   />
   <button (click)="handleLogin()">Login</button>
+  <small *ngIf="invildLogin"> {{ errorMessage }}</small>
   <p>username: {{ username }}</p>
 </div>
