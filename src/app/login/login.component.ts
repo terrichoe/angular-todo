@@ -9,16 +9,17 @@ export class LoginComponent implements OnInit {
   username = "terri";
   password = "terri";
   invaildLogin = false;
-  errorMessage = "invaild Credentials";
+  errorMessage = "Invaild Credentials";
 
   constructor() {}
 
   ngOnInit() {}
 
   handleLogin = () => {
-    console.log(`username: ${this.username} password: ${this.password}`);
+    console.log(`username: ${this.username}`);
     this.invaildLogin = this.username !== "terri" || this.password !== "123";
     if (!this.invaildLogin) {
+      console.log(this.errorMessage);
     }
   };
 }
