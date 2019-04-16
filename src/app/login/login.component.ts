@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-login",
@@ -11,7 +12,7 @@ export class LoginComponent implements OnInit {
   invaildLogin = false;
   errorMessage = "Invaild Credentials";
 
-  constructor() {}
+  constructor(private router: Router) {}
 
   ngOnInit() {}
 
@@ -19,7 +20,7 @@ export class LoginComponent implements OnInit {
     console.log(`username: ${this.username}`);
     this.invaildLogin = this.username !== "terri" || this.password !== "123";
     if (!this.invaildLogin) {
-      console.log(this.errorMessage);
+      this.router.navigate(["welcome", this.username]);
     }
   };
 }
