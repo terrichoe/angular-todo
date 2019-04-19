@@ -8,11 +8,18 @@ export class HardcodedAuthenticationService {
 
   authentication(username, password) {
     let isAuth: boolean;
-    isAuth = username !== "terri" || password !== "123";
+    isAuth = username === "terri" && password === "123";
     if (isAuth) {
       sessionStorage.setItem("authenticaterUser", username);
-      return isAuth;
     }
-    return false;
+    return isAuth;
+  }
+  isUserLogggedIn() {
+    let user = sessionStorage.getItem("authenticaterUser");
+    return user !== null;
+  }
+
+  logout() {
+    sessionStorage.removeItem("authenticaterUser");
   }
 }
