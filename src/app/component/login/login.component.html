@@ -1,0 +1,22 @@
+<h2>Login</h2>
+<div class="container">
+  <!-- one way data binding syntax - value = {{userName}} -->
+  <!-- two-way data binding syntax - [(ngModel)]="userName" -->
+  <input
+    type="text"
+    class="username"
+    placeholder="username"
+    [(ngModel)]="username"
+    name="username"
+  />
+  <input
+    type="password"
+    class="password"
+    placeholder="password"
+    [(ngModel)]="password"
+    name="password"
+  />
+  <button (click)="handleLogin()">Login</button>
+  <small *ngIf="invaildLogin">{{ errorMessage }}</small>
+  <p>username: {{ username }}</p>
+</div>
