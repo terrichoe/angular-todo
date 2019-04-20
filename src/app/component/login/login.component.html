@@ -1,22 +1,25 @@
-<h2>Login</h2>
-<div class="container">
-  <!-- one way data binding syntax - value = {{userName}} -->
-  <!-- two-way data binding syntax - [(ngModel)]="userName" -->
-  <input
-    type="text"
-    class="username"
-    placeholder="username"
-    [(ngModel)]="username"
-    name="username"
-  />
-  <input
-    type="password"
-    class="password"
-    placeholder="password"
-    [(ngModel)]="password"
-    name="password"
-  />
-  <button (click)="handleLogin()">Login</button>
-  <small *ngIf="invaildLogin">{{ errorMessage }}</small>
-  <p>username: {{ username }}</p>
+<div class="login">
+  <div class="container">
+    <h2>Login</h2>
+    <!-- one way data binding syntax - value = {{userName}} -->
+    <!-- two-way data binding syntax - [(ngModel)]="userName" -->
+    <input
+      type="text"
+      class="form-control"
+      placeholder="username"
+      [(ngModel)]="username"
+      name="username"
+    />
+    <input
+      type="password"
+      class="form-control"
+      placeholder="password"
+      [(ngModel)]="password"
+      name="password"
+    />
+    <button (click)="handleLogin()" class="btn btn-outline-dark">Login</button>
+    <small *ngIf="invaildLogin" class="form-text text-muted">{{
+      errorMessage
+    }}</small>
+  </div>
 </div>
