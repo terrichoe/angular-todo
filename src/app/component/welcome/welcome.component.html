@@ -3,4 +3,11 @@
     <h1>Welcome, {{ name | uppercase }} !</h1>
     <a routerLink="/todos">My Todo's</a>
   </div>
+
+  <div class="container">
+    <button (click)="getWelcomeMessage()" class="btn btn-success">
+      Get Welcome Message
+    </button>
+    {{ welcomeMessage }}
+  </div>
 </div>
